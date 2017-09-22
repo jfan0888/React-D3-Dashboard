@@ -1,0 +1,42 @@
+@import './variables';
+@import './mixins';
+@import './fonts';
+
+body,
+h1, h2, h3, h4, h5, h6,
+p, span, div,
+input, button, textarea {
+  margin: 0;
+  padding: 0;
+  font-family: $default-font;
+  outline: none;
+  color: $black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button, input {
+  font-family: SourceSansPro, sans-serif;
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.flex-display {
+  display: flex;
+  align-items: center;
+}
+
+.center-absolute {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
