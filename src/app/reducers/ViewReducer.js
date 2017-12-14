@@ -1,21 +1,42 @@
 import {
-  UPDATE_VIEW_STATE,
-  UPDATE_VIEW_MODAL,
-} from '../actions/View';
+    CP_HIDE_WARNING,
+    CP_SHOW_WARNING,
+    CP_UPDATE_SIDEBAR_SPREAD,
+    CP_UPDATE_VIEW_CARD,
+    CP_UPDATE_VIEW_SIDEBAR
+} from "../actions/View";
 
-export default function (state = {}, action) {
-  const newState = JSON.parse(JSON.stringify(state));
+const InitialState = {
+    sidebar: "",
+    card: "",
+    spread: "",
+    warning: {
+        message: "",
+        type: ""
+    }
 
-  switch (action.type) {
-    case UPDATE_VIEW_STATE:
-      newState.state = action.payload;
-      return newState;
-    case UPDATE_VIEW_MODAL:
-      newState.modal = action.payload;
-      return newState;
-    default:
-      break;
-  }
+}
 
-  return state;
+export default function (state = InitialState, action) {
+    const newState = JSON.parse(JSON.stringify(state));
+
+    switch (action.type) {
+        case CP_UPDATE_VIEW_SIDEBAR:
+            newState.sidebar = action.payload;
+            return newState;
+        case CP_UPDATE_VIEW_CARD:
+            newState.card = action.payload;
+            return newState;
+        case CP_UPDATE_SIDEBAR_SPREAD:
+            newState.spread = action.payload;
+            return newState;
+        case CP_SHOW_WARNING:
+            return {...state, warning: action.payload}
+        case CP_HIDE_WARNING:
+            return {...state, warning: {message: "", type: ""}}
+        default:
+            break;
+    }
+
+    return state;
 }

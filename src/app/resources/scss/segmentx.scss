@@ -1,0 +1,403 @@
+@import "variables";
+
+.filter-sidebar {
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+
+  .sidebarfade {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    margin: 0px;
+    background-color: black;
+    opacity: 0.62;
+    z-index: 2;
+    animation: sidefade 1s forwards;
+  }
+  @keyframes sidefade {
+    0% {opacity: 0;}
+    100% {opacity: 0.62;}
+  }
+  .sidebarcontent {
+    width: 100%;
+    height: 100%;
+    right: 0;
+    z-index: 3;
+    animation: slidein 1s forwards;
+    position: fixed;
+    text-align: right;
+
+    .close-button {
+      display: inline-block;
+      vertical-align: top;
+      cursor: pointer;
+    }  
+    .filter-sidebar-content {
+      width: 70%;
+      height: 100%;
+      padding: 39px 31px;
+      right: 0px;
+      z-index: 3;
+      background-color: white;
+      display: inline-block;
+      text-align: left;
+
+      .filter-sidebar-caption {
+        font-size: 24px;
+        margin-bottom: 34px;
+        color: $color-menu-font;
+      }
+      .card-info {
+        margin-bottom: 33px;
+        
+        .card-info-item {
+          margin-right: 58px;
+          display: inline-block;
+
+          .info-item-caption {
+            margin-bottom: 9px;
+            font-size: 14px;
+            color: $color-minor-font;
+          }
+          .info-item-value {
+            font-size: 30px;
+            color: $color-default-font;
+          }
+        }
+      }
+      .filter-vendors-tiles {
+        margin-bottom: 33px;
+
+        .filter-vendor-tile {
+          padding: 8px;
+          margin-right: 10px;
+          font-size: 13px;
+          background-color: white;
+          border: 1px solid $color-default-border;
+          border-radius: 32px;
+          color: $color-minor-font;
+          cursor: pointer;
+
+          &.active {
+            background-color: $color-default-border;
+            color: white;
+            border: transparent;
+          }
+          &:hover {
+            background-color: $color-default-border;
+            color: white;
+            border: transparent;
+          }        
+        }
+      }
+      .filter-product-list {
+        margin-bottom: 60px;
+      }
+      .save-button-area {
+        position: relative;
+        text-align: right;
+
+        .save-filter-button {
+          padding: 11px 32px;
+          font-size: 16px;
+          color: white;
+          border-color: transparent;
+          border-radius: 4px;
+          background-color: $color-link-font;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  @keyframes slidein {
+    0% {left: 100%;}
+    100% {left: 0%;}
+  }
+}
+
+.filter-area {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 22px 21px;
+  margin: 0px 32px 55px 32px;
+  background-color: $color-filter-background;
+
+  .filter-filterby {
+    width: 60%;
+    display: inline-block;
+    margin-right: 41px;
+    
+    .filterby-title {
+      padding: 0px;
+      margin-bottom: 16px;
+      font-size: 14px;
+      color: $color-card-title;
+      line-height: 1.1;
+    }
+
+    .filter-filterby-bars {
+      padding: 0px;
+      display: inline-block;
+      margin-right: 150px;
+
+      .filterby-bars-item {
+        margin-bottom: 14px;
+        padding: 11px 0px 2px;
+
+        .filterby-bar-caption {
+          font-size: 14px;
+          color: $color-minor-font;
+        }
+        .filterby-filter-bar {
+        }          
+      }
+    }
+
+    .filter-filterby-filters {
+      padding-top: 2px;
+      display: inline-block;
+      margin-bottom: 14px;
+
+      .filterby-filters-item {
+        margin-bottom: 14px;
+
+        .filterby-bar-caption {
+          font-size: 14px;
+          color: $color-minor-font;
+          padding-right: 33px;
+        }
+        .filterby-filter-value {
+          width: 225px;
+          padding: 8px 0px;
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid $color-block-border;
+          font-size: 14px;
+          color: $color-minor-font;
+          display: inline-block;
+        }          
+      }
+    }
+    
+  }
+  .filter-usage {
+    width: 40%;
+    display: inline-block;
+
+    .filter-usage-title {
+      font-size: 14px;
+      color: $color-card-title;
+      margin-bottom: 11px;
+    }
+    .usage-blocks-caption {
+      font-size: 14px;
+      color: $color-minor-font;
+      margin-bottom: 16px;
+    }
+    .filter-usage-blocks {
+      display: flex;
+
+      .filter-usage-block {
+        display: inline-block;
+
+        .usage-sign {
+          width: 22px;
+          height: 22px;
+          cursor: pointer;
+        }
+        .usage-block-title {
+          margin-left: 4px;
+          margin-bottom: 11px;
+          display: inline-block;
+          font-size: 14px;
+          color: $color-minor-font;
+          vertical-align: middle;
+        }
+        .usage-block-content {
+          color: $color-minor-font;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  .filters-visible-button {
+    position: absolute;
+    padding: 6px 42px;
+    color: $color-default-font;
+    font-size: 14px;
+    border: solid 1px $color-default-border;
+    background-color: white;
+    text-align: center;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+
+    .spread-trigger {
+      margin-left: 5px;
+      position: absolute;
+    }
+  }
+}
+.info-area {
+  padding: 25px 25px;
+  margin-left: 35px;
+  margin-right: 35px;
+  border: 1px solid $color-block-border;
+  box-shadow: 0px 2px 2px $color-block-shadow;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+
+  .segment-info-image {
+    left: 0px;
+    top: 0px;
+    margin-right: 16px;
+  }
+  .info-caption-content {
+    margin-top: 20px;
+    font-size: 24px;
+    color: $color-default-font;
+  }
+  .info-card-area {
+    display: block;
+    border-right: 1px solid $color-block-border;
+    padding: 25px 50px 25px 0px;     
+    
+    .info-number-card {
+      padding: 21px 20px;
+      border: 1px solid $color-block-border;
+      box-shadow: 0px 2px 2px $color-block-shadow;
+
+      .info-card-title {
+        font-size: 14px;
+        color: $color-minor-font;
+      }
+      .info-card-value {
+        font-size: 48px;
+        color: $color-default-font;
+      }
+    }
+  }
+  .filteredby-area {
+    margin-top: 65px;
+    margin-left: 45px;
+
+    .add-card-button {
+      width: 40px;
+      height: 40px;
+      margin-right: 12px;      
+      //font-size: 40px;  // For ib-icon
+      //color: $color-link-font;  // For ib-icon
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+        //color: $color-empha-element; // For ib-icon
+      }
+
+    }
+
+    .saved-filterby-area{
+      display: inline-block;
+
+      .saved-filterby-caption {
+        
+      }
+      .saved-filter-tiles {
+        .saved-filter-tile {
+          padding: 9px 13px;
+          border: 1px solid $color-default-border;
+          border-radius: 32px;
+          color: $color-minor-font;
+          font-size: 11px;
+        }
+      }
+    }      
+  }
+}
+.after-save-area {
+  display: none;
+  padding: 38px 34px;
+  margin: 77px 35px 34px 35px;
+  border: 1px solid $color-block-border;
+  box-shadow: 0px 2px 2px $color-block-shadow;
+
+  .card-tiles-area{
+    display: flex;
+
+    .card-block {
+      margin: 0px;
+      margin-right: 37px;
+    }
+
+    .filtered-tiles-area {
+      display: flex;
+      border-left: 1px solid $color-block-border;
+      padding-left: 45px;
+
+      .add-card-button {
+        width: 40px;
+        height: 40px;
+        margin-right: 12px;
+      }
+      .saved-filterby-area {
+        display: inline-block;
+
+        .saved-filterby-caption {
+          color: $color-minor-font;
+          font-size: 14px;
+          margin-top: 11px;
+          margin-bottom: 13px;
+        }
+        
+        .saved-filter-tiles {
+          .saved-filter-tile {
+            padding: 6px 13px;
+            margin-right: 5px;
+            color: $color-minor-font;
+            font-size: 11px;
+            background-color: white;
+            border: 1px solid $color-default-border;
+            border-radius: 32px;
+          }
+        }
+      }
+    }
+  }
+}
+.additional-field {
+  border-top: 1px solid $color-block-border;
+  padding-top: 14px;
+  display: block;
+
+  .add-card-button {
+    width: 40px;
+    height: 40px;
+    margin-right: 13px;
+  }
+
+  .relation-select {
+    padding: 8px 12px;
+    margin-right: 13px;
+    font-size: 14px;
+    border: 1px solid $color-default-border;
+    border-radius: 2px;
+    vertical-align: top;
+
+    &.add-segment-option {
+      cursor: pointer;
+      color: #ffffff;
+    }
+  }
+}
+

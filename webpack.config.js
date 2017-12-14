@@ -1,5 +1,6 @@
 var Path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var Webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -25,14 +26,28 @@ var webpackConfig = {
     new HtmlWebpackPlugin({
       template: Path.join(__dirname, './src/index.html'),
     }),
+    new CopyWebpackPlugin([ { from: './static', to: 'static' } ])
   ],
   module: {
-    loaders: [{
-      test: /.jsx?$/,
-      include: Path.join(__dirname, './src/app'),
-      loader: 'babel',
-    }],
+    loaders: [
+      {
+        test: /.jsx?$/,
+        include: Path.join(__dirname, './src/app'),
+        loader: 'babel',
+      },
+      {
+        test: /\.css$/,
+        loader:'style!css!'
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'file?name=static/fonts/[name].[ext]'
+      }
+    ]
   },
+    externals:[{
+        xmlhttprequest: '{XMLHttpRequest:XMLHttpRequest}'
+    }]
 };
 
 // ------------------------------------------
@@ -49,7 +64,7 @@ webpackConfig.entry = !isProduction
 // ------------------------------------------
 webpackConfig.output = {
   path: Path.join(__dirname, './dist'),
-  filename: jsOutputPath,
+  filename: jsOutputPath
 };
 
 // ------------------------------------------
@@ -69,16 +84,6 @@ isProduction
       test: /\.scss$/,
       loaders: ['style', 'css', 'sass'],
     });
-
-webpackConfig.module.loaders.push(
-  { test: /\.woff(\?.*)?$/,  loader: 'url?limit=65000&mimetype=application/font-woff&name=static/fonts/[name].[ext]' },
-  { test: /\.woff2(\?.*)?$/, loader: 'url?limit=65000&mimetype=application/font-woff2&name=static/fonts/[name].[ext]' },
-  { test: /\.otf(\?.*)?$/,   loader: 'file?limit=65000&mimetype=application/octet-stream&name=static/fonts/[name].[ext]' },
-  { test: /\.ttf(\?.*)?$/,   loader: 'url?limit=65000&mimetype=application/octet-stream&name=static/fonts/[name].[ext]' },
-  { test: /\.eot(\?.*)?$/,   loader: 'file?limit=65000&mimetype=application/vnd.ms-fontobject&name=static/fonts/[name].[ext]' },
-  { test: /\.svg(\?.*)?$/,   loader: 'url?limit=65000&mimetype=image/svg+xml&name=static/fonts/[name].[ext]' },
-  { test: /\.(png|jpg)$/,    loader: 'url?limit=8192&name=static/images/[name].[ext]' }
-);  
 
 // ------------------------------------------
 // Plugins

@@ -1,0 +1,212 @@
+[class*='ib-icon-']:before{
+  display: inline-block;
+  font-family: 'ib';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle;
+  //margin-right: 0.5rem;
+}
+
+
+.ib-icon-bell:before {
+  content: "\0041";
+}
+
+.ib-icon-dashboard:before {
+  content :"\0042",
+}
+
+.ib-icon-arrow-up:before {
+  content: "\0046";
+}
+
+
+.ib-icon-arrow-down:before {
+  content: "\0043";
+}
+
+.ib-icon-arrow-left:before {
+  content: "\0044";
+}
+
+.ib-icon-arrow-right:before {
+  content: "\0045";
+}
+
+.ib-icon-hide:before {
+  content: "\0053";
+}
+
+.ib-icon-show:before {
+  content: "\0054";
+}
+
+.ib-icon-check:before {
+  content: "\0035";
+}
+
+.ib-icon-close:before {
+  content: "\004d";
+}
+
+.ib-icon-user-add:before {
+  content: "\006c";
+}
+
+.ib-icon-users-add:before {
+  content: "\006e";
+}
+
+.ib-icon-add-list:before {
+  content: "\0076";
+}
+
+.ib-icon-add-form:before {
+  content: "\0077";
+}
+
+.ib-icon-add-tab:before {
+  content: "\0078";
+}
+
+.ib-icon-plus-circle:before {
+  content: "\0063";
+}
+
+.ib-icon-plus:before {
+  content: "\0064";
+}
+.ib-icon-uncheck:before{
+  content: "\0034";
+}
+.ib-icon-check:before{
+  content: "\0035";
+}
+.ib-icon-circle-check:before{
+  content: "\0036";
+}
+.ib-icon-circle:before{
+  content: "\0037";
+}
+.ib-icon-info:before {
+content: "\0057";
+}
+.ib-icon-recycle:before{
+  content: "\0068";
+}
+.ib-icon-export:before{
+  content: "\0025";
+}
+.ib-icon-save:before{
+  content: "\0031";
+}
+.ib-icon-report:before{
+  content:"\0069";
+}
+.ib-icon-user:before{
+  content:"\006d";
+}
+
+$icons: (
+  ib-icon-bell: "\0041",
+  ib-icon-dashboard:"\0042",
+  ib-icon-arrow-down:"\0043",
+  ib-icon-arrow-left:"\0044",
+  ib-icon-arrow-right:"\0045",
+  ib-icon-arrow-up:"\0046",
+  ib-icon-briefcase:"\0047",
+  ib-icon-calender:"\0048",
+  ib-icon-camera:"\0049",
+  ib-icon-campaign:"\004a",
+  ib-icon-chat:"\004a",
+  ib-icon-close-circle:"\004c",
+  ib-icon-close:"\004d",
+  ib-icon-dollor:"\004e",
+  ib-icon-pencil:"\004f",
+  ib-icon-edit_1:"\0050",
+  ib-icon-folder:"\0051",
+  ib-icon-globe:"\0052",
+  ib-icon-hide:"\0053",
+  ib-icon-show:"\0054",
+  ib-icon-email:"\0055",
+  ib-icon-location:"\0056",
+  ib-icon-info:"\0057",
+  ib-icon-lock-sync:"\0058",
+  ib-icon-menu:"\0059",
+  ib-icon-minus-circle:"\005a",
+  ib-icon-minus:"\0061",
+  ib-icon-play-video:"\0062",
+  ib-icon-plus-circle:"\0063",
+  ib-icon-plus:"\0064",
+  ib-icon-power:"\0065",
+  ib-icon-profile:"\0066",
+  ib-icon-question:"\0067",
+  ib-icon-recycle:"\0068",
+  ib-icon-report:"\0069",
+  ib-icon-search:"\006a",
+  ib-icon-trash:"\006b",
+  ib-icon-user-add:"\006c",
+  ib-icon-user:"\006d",
+  ib-icon-users-add:"\006e",
+  ib-icon-users:"\006f",
+  ib-icon-star:'\0070',
+  ib-icon-customize:'\0071',
+  ib-icon-label:'\0072',
+  ib-icon-settings:'\0073',
+  ib-icon-clock:'\0075',
+  ib-icon-add-list:'\0076',
+  ib-icon-add-form:'\0077',
+  ib-icon-add-tab:'\0078',
+  ib-icon-attached:'\0079',
+  ib-icon-attached-doc:'\007a',
+  ib-icon-attached-view:'\0030',
+  ib-icon-save:'\0031',
+  ib-icon-template:'\0032',
+  ib-icon-permissions:'\0033',
+  ib-icon-uncheck:'\0034',
+  ib-icon-check:'\0035',
+  ib-icon-circle-check:'\0036',
+  ib-icon-circle:'\0037',
+  ib-icon-video:'\0038',
+  ib-icon-unlock:'\0039',
+  ib-icon-lock:'\0021',
+  ib-icon-email-resend:'\0022',
+  ib-icon-help:'\0023',
+  ib-icon-circle-check-fill:'\0024',
+  ib-icon-export:'\0025',
+
+
+);
+
+@mixin icon($position: before, $icon: false, $styles: true) {
+  @if $position == both {
+    $position: 'before, &:after';
+  }
+  // Either a :before or :after pseudo-element, or both, defaulting to :before
+  &:#{$position} {
+    @if $icon {
+      // A particular icon has been specified
+      content: "#{map-get($icons, $icon)}";
+    }
+    @if $styles {
+      // Supportive icon styles required
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-family: 'ib';
+      display: inline-block;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      vertical-align: middle;
+      margin-right: 0.3rem;
+      margin-right: 0.3rem;
+
+    }
+    // Include any extra rules supplied for the pseudo-element
+    @content;
+  }
+}

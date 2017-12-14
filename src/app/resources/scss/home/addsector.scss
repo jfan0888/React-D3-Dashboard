@@ -1,0 +1,47 @@
+.card-block {
+  min-height: 80px;
+  padding: 23px 20px;
+  color: $color-default-font;
+  line-height: 1.2;
+  font-weight: $font-default-weight;
+  background-color: $color-white;
+  border: 1px solid $color-block-border;
+  box-shadow: 0 2px 2px 0 $color-block-shadow;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  margin: 14px;
+  font-style: normal;
+  z-index: 1;
+
+  .add-sector{
+    width:100%;
+  }
+
+  &.active {
+    background-color: $color-card-active;
+    .card-control-button .check-sign {
+      opacity: 1;
+      transition: opacity 1s;
+    }
+  }
+
+  &:hover {
+    background-color: $color-card-active;
+  }
+
+  .card-content-area {
+    &:hover {
+      cursor: pointer;
+    }
+    .card-title {
+      display: block;
+      font-size: 24px;
+      color: $color-default-font;
+    }
+  }
+  &.add-sector-card{
+    text-align: center;
+  }
+}
+

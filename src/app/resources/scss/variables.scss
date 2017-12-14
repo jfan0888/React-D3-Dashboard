@@ -1,0 +1,75 @@
+$img-dir: '/static/images/';
+$fonts-dir: '/static/fonts/';
+
+$default-font: 'Ubuntu', sans-serif;
+
+$primary-color: #F46414;
+$secondary-color: #a1c81b;
+
+$color-white: #ffffff;
+$color-black: #202020;
+$color-gray: #c1c1c1;
+$color-default-font: #757575;
+$color-default-border: #DDDDDD;
+$color-minor-font: #9B9B9B;
+$color-link-font: #F46414;
+$color-block-border: #DDDDDD;
+$color-block-shadow: rgba(0, 0, 0, 0.18);
+$color-background: #D8D8D8;
+$color-empha-element: #EF6A20;
+$color-menu-font: #4A4A4A;
+$color-search-bottom-line: #C7C7C7;
+$color-card-active: #EFEFEF;
+$color-tabbar-border: #979797;
+$color-card-title: #4D4F53;
+$color-filter-background: #F5F5F5;
+$color-button-caption: #565656;
+$color-header-underline: #EEEEEE;
+
+$font-default-weight: 400;
+$base-font-size: 1.4rem;
+
+$transition-duration: 1s;
+$transition-duration-double: 2s;
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated $screen-xs
+$screen-xs:                  320px !default;
+//** Deprecated $screen-xs-min
+$screen-xs-min:              $screen-xs !default;
+//** Deprecated $screen-phone
+$screen-phone:               $screen-xs-min !default;
+
+// Small screen / tablet
+//** Deprecated $screen-sm
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+//** Deprecated $screen-tablet
+$screen-tablet:              $screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated $screen-md
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+//** Deprecated $screen-desktop
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated $screen-lg
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+//** Deprecated $screen-lg-desktop
+$screen-lg-desktop:          $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+
+//form elements
+$label-color: #999999;

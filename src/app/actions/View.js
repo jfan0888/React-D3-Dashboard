@@ -1,25 +1,57 @@
-export const UPDATE_VIEW_STATE = 'UPDATE_VIEW_STATE';
-export const UPDATE_VIEW_MODAL = 'UPDATE_VIEW_MODAL';
+export const CP_UPDATE_VIEW_SIDEBAR = 'UPDATE_VIEW_SIDEBAR';
+export const CP_UPDATE_VIEW_CARD = 'UPDATE_VIEW_CARD';
+export const CP_UPDATE_SIDEBAR_SPREAD = 'UPDATE_SIDEBAR_SPREAD';
+export const CP_SHOW_WARNING = 'SHOW_WARNING';
+export const CP_HIDE_WARNING = 'HIDE_WARNING';
 
-export const STATE_LOADING = 'loading';
-export const STATE_LANDING = 'landing';
-export const MODAL_TYPE_JOIN = 'join';
-export const MODAL_TYPE_NOTICE = 'notice';
-export const MODAL_SUBTYPE_INPUT = 'input';
-export const MODAL_SUBTYPE_VERIFY_PHONE = 'verify_phone';
-export const MODAL_SUBTYPE_VERIFY_EMAIL = 'verify_email';
-export const MODAL_SUBTYPE_WELCOME = 'welcome';
-
-export function updateViewState(data) {
-  return {
-    type: UPDATE_VIEW_STATE,
-    payload: data,
-  };
+export function updateViewSidebar(data) {
+    return {
+        type: CP_UPDATE_VIEW_SIDEBAR,
+        payload: data,
+    };
 }
 
-export function updateViewModal(data) {
-  return {
-    type: UPDATE_VIEW_MODAL,
-    payload: data,
-  };
+export function updateViewCard(data) {
+    console.log('updateViewCard', data)
+    return {
+        type: CP_UPDATE_VIEW_CARD,
+        payload: data,
+    };
 }
+
+export function updateSidebarSpread(data) {
+    return {
+        type: CP_UPDATE_SIDEBAR_SPREAD,
+        payload: data,
+    };
+}
+
+export const showWarning = (message, type="Error") => dispatch => {
+
+    dispatch({
+        type: CP_SHOW_WARNING,
+        payload: {message:message, type:type}
+    })
+
+    setTimeout(function() { dispatch({
+        type: CP_HIDE_WARNING,
+        payload: null
+    }) }.bind(dispatch),5000);
+
+}
+
+export const hideWarning = () => dispatch => {
+    return dispatch({
+        type: CP_HIDE_WARNING,
+        payload: null
+    })
+
+}
+
+
+
+
+
+
+
+

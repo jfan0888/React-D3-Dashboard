@@ -1,0 +1,106 @@
+.sidebar {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99; }
+  .sidebar.false {
+    display: none; }
+  .sidebar .sidebarfade {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    position: fixed;
+    z-index: 2;
+    animation: sidefade 1s forwards; }
+@keyframes sidefade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 0.62; } }
+  .sidebar .sidebarcontent {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    left: 100%;
+    z-index: 3;
+    animation: slidein 1s forwards;
+    overflow-y: auto; }
+    .sidebar .sidebarcontent .close-button {
+      display: inline-block;
+      vertical-align: top; }
+      .sidebar .sidebarcontent .close-button .sidebar-close-icon {
+        width: 48px;
+        height: 48px; }
+    .sidebar .sidebarcontent .add-customer {
+      width: calc( 50% + 48px);
+      height: 100%;
+      padding: 39px 46px;
+      background-color: white;
+      text-align: left;
+      display: inline-block; }
+      .sidebar .sidebarcontent .add-customer .add-customer-title {
+        font-size: 24px;
+        padding-bottom: 34px; }
+      .sidebar .sidebarcontent .add-customer .customer-lists-area .customer-list-input {
+        margin-bottom: 35px; }
+        .sidebar .sidebarcontent .add-customer .customer-lists-area .customer-list-input .list-input-caption {
+          font-size: 14px;
+          margin-bottom: 21px; }
+        .sidebar .sidebarcontent .add-customer .customer-lists-area .customer-list-input .list-name-input {
+          font-size: 14px;
+          border: transparent;
+          padding-bottom: 12px; }
+      .sidebar .sidebarcontent .add-customer .company-lists-area .get-lists-icons {
+        display: flex;
+        align-items: center;
+        margin-bottom: 41px; }
+        .sidebar .sidebarcontent .add-customer .company-lists-area .get-lists-icons .xls-import-icon {
+          margin-right: 7px; }
+        .sidebar .sidebarcontent .add-customer .company-lists-area .get-lists-icons .button-caption {
+          vertical-align: middle;
+          margin-right: 42px; }
+        .sidebar .sidebarcontent .add-customer .company-lists-area .get-lists-icons .mannual-entry-icon {
+          margin-right: 7px; }
+        .sidebar .sidebarcontent .add-customer .company-lists-area .get-lists-icons .button-caption {
+          vertical-align: middle;
+          font-size: 13px; }
+      .sidebar .sidebarcontent .add-customer .company-lists-area .company-lists-content .company-lists-headers {
+        padding-bottom: 15px; }
+        .sidebar .sidebarcontent .add-customer .company-lists-area .company-lists-content .company-lists-headers .lists-column-title {
+          font-size: 13px;
+          display: inline-block;
+          vertical-align: middle;
+          text-align: center;
+          margin: auto; }
+          .sidebar .sidebarcontent .add-customer .company-lists-area .company-lists-content .company-lists-headers .lists-column-title.iso-country {
+            width: 10%; }
+          .sidebar .sidebarcontent .add-customer .company-lists-area .company-lists-content .company-lists-headers .lists-column-title.company-name {
+            width: 50%; }
+          .sidebar .sidebarcontent .add-customer .company-lists-area .company-lists-content .company-lists-headers .lists-column-title.url {
+            width: 40%; }
+      .sidebar .sidebarcontent .add-customer .company-lists-area .save-list-area {
+        display: inline-block;
+        position: absolute;
+        bottom: 75px;
+        right: 55px; }
+        .sidebar .sidebarcontent .add-customer .company-lists-area .save-list-area .save-list-button {
+          color: white;
+          border-color: transparent;
+          font-size: 16px;
+          padding: 11px 30px;
+          border-radius: 4px 4px 4px 4px;
+          cursor: pointer; }
+@keyframes slidein {
+  0% {
+    left: 100%; }
+  100% {
+    left: 0%; } }
+
+/*# sourceMappingURL=sidebar.css.map */

@@ -1,0 +1,295 @@
+.filter-sidebar {
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99; }
+  .filter-sidebar .sidebarfade {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    margin: 0px;
+    background-color: black;
+    opacity: 0.62;
+    z-index: 2;
+    animation: sidefade 1s forwards; }
+@keyframes sidefade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 0.62; } }
+  .filter-sidebar .sidebarcontent {
+    width: 100%;
+    height: 100%;
+    right: 0;
+    z-index: 3;
+    animation: slidein 1s forwards;
+    position: fixed;
+    text-align: right; }
+    .filter-sidebar .sidebarcontent .close-button {
+      display: inline-block;
+      vertical-align: top;
+      cursor: pointer; }
+    .filter-sidebar .sidebarcontent .filter-sidebar-content {
+      width: 70%;
+      height: 100%;
+      padding: 39px 31px;
+      right: 0px;
+      z-index: 3;
+      background-color: white;
+      display: inline-block;
+      text-align: left; }
+      .filter-sidebar .sidebarcontent .filter-sidebar-content .filter-sidebar-caption {
+        font-size: 24px;
+        margin-bottom: 34px;
+        color: #4A4A4A; }
+      .filter-sidebar .sidebarcontent .filter-sidebar-content .card-info {
+        margin-bottom: 33px; }
+        .filter-sidebar .sidebarcontent .filter-sidebar-content .card-info .card-info-item {
+          margin-right: 58px;
+          display: inline-block; }
+          .filter-sidebar .sidebarcontent .filter-sidebar-content .card-info .card-info-item .info-item-caption {
+            margin-bottom: 9px;
+            font-size: 14px;
+            color: #9B9B9B; }
+          .filter-sidebar .sidebarcontent .filter-sidebar-content .card-info .card-info-item .info-item-value {
+            font-size: 30px;
+            color: #757575; }
+      .filter-sidebar .sidebarcontent .filter-sidebar-content .filter-vendors-tiles {
+        margin-bottom: 33px; }
+        .filter-sidebar .sidebarcontent .filter-sidebar-content .filter-vendors-tiles .filter-vendor-tile {
+          padding: 8px;
+          margin-right: 10px;
+          font-size: 13px;
+          background-color: white;
+          border: 1px solid #DDDDDD;
+          border-radius: 32px;
+          color: #9B9B9B;
+          cursor: pointer; }
+          .filter-sidebar .sidebarcontent .filter-sidebar-content .filter-vendors-tiles .filter-vendor-tile.active {
+            background-color: #DDDDDD;
+            color: white;
+            border: transparent; }
+          .filter-sidebar .sidebarcontent .filter-sidebar-content .filter-vendors-tiles .filter-vendor-tile:hover {
+            background-color: #DDDDDD;
+            color: white;
+            border: transparent; }
+      .filter-sidebar .sidebarcontent .filter-sidebar-content .filter-product-list {
+        margin-bottom: 60px; }
+      .filter-sidebar .sidebarcontent .filter-sidebar-content .save-button-area {
+        position: relative;
+        text-align: right; }
+        .filter-sidebar .sidebarcontent .filter-sidebar-content .save-button-area .save-filter-button {
+          padding: 11px 32px;
+          font-size: 16px;
+          color: white;
+          border-color: transparent;
+          border-radius: 4px;
+          background-color: #F46414;
+          cursor: pointer; }
+@keyframes slidein {
+  0% {
+    left: 100%; }
+  100% {
+    left: 0%; } }
+.filter-area {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 22px 21px;
+  margin: 0px 32px 55px 32px;
+  background-color: #F5F5F5; }
+  .filter-area .filter-filterby {
+    width: 60%;
+    display: inline-block;
+    margin-right: 41px; }
+    .filter-area .filter-filterby .filterby-title {
+      padding: 0px;
+      margin-bottom: 16px;
+      font-size: 14px;
+      color: #4D4F53;
+      line-height: 1.1; }
+    .filter-area .filter-filterby .filter-filterby-bars {
+      padding: 0px;
+      display: inline-block;
+      margin-right: 150px; }
+      .filter-area .filter-filterby .filter-filterby-bars .filterby-bars-item {
+        margin-bottom: 14px;
+        padding: 11px 0px 2px; }
+        .filter-area .filter-filterby .filter-filterby-bars .filterby-bars-item .filterby-bar-caption {
+          font-size: 14px;
+          color: #9B9B9B; }
+    .filter-area .filter-filterby .filter-filterby-filters {
+      padding-top: 2px;
+      display: inline-block;
+      margin-bottom: 14px; }
+      .filter-area .filter-filterby .filter-filterby-filters .filterby-filters-item {
+        margin-bottom: 14px; }
+        .filter-area .filter-filterby .filter-filterby-filters .filterby-filters-item .filterby-bar-caption {
+          font-size: 14px;
+          color: #9B9B9B;
+          padding-right: 33px; }
+        .filter-area .filter-filterby .filter-filterby-filters .filterby-filters-item .filterby-filter-value {
+          width: 225px;
+          padding: 8px 0px;
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid #DDDDDD;
+          font-size: 14px;
+          color: #9B9B9B;
+          display: inline-block; }
+  .filter-area .filter-usage {
+    width: 40%;
+    display: inline-block; }
+    .filter-area .filter-usage .filter-usage-title {
+      font-size: 14px;
+      color: #4D4F53;
+      margin-bottom: 11px; }
+    .filter-area .filter-usage .usage-blocks-caption {
+      font-size: 14px;
+      color: #9B9B9B;
+      margin-bottom: 16px; }
+    .filter-area .filter-usage .filter-usage-blocks {
+      display: flex; }
+      .filter-area .filter-usage .filter-usage-blocks .filter-usage-block {
+        display: inline-block; }
+        .filter-area .filter-usage .filter-usage-blocks .filter-usage-block .usage-sign {
+          width: 22px;
+          height: 22px;
+          cursor: pointer; }
+        .filter-area .filter-usage .filter-usage-blocks .filter-usage-block .usage-block-title {
+          margin-left: 4px;
+          margin-bottom: 11px;
+          display: inline-block;
+          font-size: 14px;
+          color: #9B9B9B;
+          vertical-align: middle; }
+        .filter-area .filter-usage .filter-usage-blocks .filter-usage-block .usage-block-content {
+          color: #9B9B9B;
+          font-size: 13px; }
+  .filter-area .filters-visible-button {
+    position: absolute;
+    padding: 6px 42px;
+    color: #757575;
+    font-size: 14px;
+    border: solid 1px #DDDDDD;
+    background-color: white;
+    text-align: center;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    cursor: pointer; }
+    .filter-area .filters-visible-button .spread-trigger {
+      margin-left: 5px;
+      position: absolute; }
+
+.info-area {
+  padding: 25px 25px;
+  margin-left: 35px;
+  margin-right: 35px;
+  border: 1px solid #DDDDDD;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: flex-start;
+  position: relative; }
+  .info-area .segment-info-image {
+    left: 0px;
+    top: 0px;
+    margin-right: 16px; }
+  .info-area .info-caption-content {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #757575; }
+  .info-area .info-card-area {
+    display: block;
+    border-right: 1px solid #DDDDDD;
+    padding: 25px 50px 25px 0px; }
+    .info-area .info-card-area .info-number-card {
+      padding: 21px 20px;
+      border: 1px solid #DDDDDD;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.18); }
+      .info-area .info-card-area .info-number-card .info-card-title {
+        font-size: 14px;
+        color: #9B9B9B; }
+      .info-area .info-card-area .info-number-card .info-card-value {
+        font-size: 48px;
+        color: #757575; }
+  .info-area .filteredby-area {
+    margin-top: 65px;
+    margin-left: 45px; }
+    .info-area .filteredby-area .add-card-button {
+      width: 40px;
+      height: 40px;
+      margin-right: 12px;
+      cursor: pointer; }
+      .info-area .filteredby-area .add-card-button:hover {
+        transform: scale(1.05); }
+    .info-area .filteredby-area .saved-filterby-area {
+      display: inline-block; }
+      .info-area .filteredby-area .saved-filterby-area .saved-filter-tiles .saved-filter-tile {
+        padding: 9px 13px;
+        border: 1px solid #DDDDDD;
+        border-radius: 32px;
+        color: #9B9B9B;
+        font-size: 11px; }
+
+.after-save-area {
+  display: none;
+  padding: 38px 34px;
+  margin: 77px 35px 34px 35px;
+  border: 1px solid #DDDDDD;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.18); }
+  .after-save-area .card-tiles-area {
+    display: flex; }
+    .after-save-area .card-tiles-area .card-block {
+      margin: 0px;
+      margin-right: 37px; }
+    .after-save-area .card-tiles-area .filtered-tiles-area {
+      display: flex;
+      border-left: 1px solid #DDDDDD;
+      padding-left: 45px; }
+      .after-save-area .card-tiles-area .filtered-tiles-area .add-card-button {
+        width: 40px;
+        height: 40px;
+        margin-right: 12px; }
+      .after-save-area .card-tiles-area .filtered-tiles-area .saved-filterby-area {
+        display: inline-block; }
+        .after-save-area .card-tiles-area .filtered-tiles-area .saved-filterby-area .saved-filterby-caption {
+          color: #9B9B9B;
+          font-size: 14px;
+          margin-top: 11px;
+          margin-bottom: 13px; }
+        .after-save-area .card-tiles-area .filtered-tiles-area .saved-filterby-area .saved-filter-tiles .saved-filter-tile {
+          padding: 6px 13px;
+          margin-right: 5px;
+          color: #9B9B9B;
+          font-size: 11px;
+          background-color: white;
+          border: 1px solid #DDDDDD;
+          border-radius: 32px; }
+
+.additional-field {
+  border-top: 1px solid #DDDDDD;
+  padding-top: 14px;
+  display: block; }
+  .additional-field .add-card-button {
+    width: 40px;
+    height: 40px;
+    margin-right: 13px; }
+  .additional-field .relation-select {
+    padding: 8px 12px;
+    margin-right: 13px;
+    font-size: 14px;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    vertical-align: top; }
+    .additional-field .relation-select.add-segment-option {
+      cursor: pointer;
+      color: #ffffff; }
+
+/*# sourceMappingURL=segmentx.css.map */

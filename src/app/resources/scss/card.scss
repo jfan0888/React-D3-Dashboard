@@ -1,0 +1,255 @@
+.card-block {
+  width: 32%;
+  min-height: 170px;
+  padding: 23px 20px;
+  color: $color-default-font;
+  line-height: 1.2;
+  font-weight: $font-default-weight;
+  background-color: $color-white;
+  border: 1px solid $color-block-border;
+  box-shadow: 0 2px 2px 0 $color-block-shadow;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  font-style: normal;
+  z-index: 1;
+  float: left;
+  margin: 0.65%;
+
+
+  &.active {
+    background-color: $color-card-active;
+    .card-control-button .check-sign {
+      opacity: 1;
+      transition: opacity 1s;      
+    }
+  }
+
+  &:hover {
+    background-color: $color-card-active;
+    .card-delete-button {
+      dispaly:block;
+      color: #333333;
+      position: absolute;
+      z-index: 99999;
+      right: 0.25rem;
+      text-align: center;
+      display: block;
+      width: 30px;
+      height: 30px;
+      font-style: normal;
+
+      &:hover {
+        color: $color-link-font;
+        cursor: pointer;
+        transition: color 1s;
+      }
+    }
+  }  
+
+  .card-control-button {
+    &:hover {
+      .card-delete-button {
+       color: #8f5b54;
+      }
+    }
+
+    .check-sign {
+      height: 30px;
+      opacity: 0;
+      position: absolute;
+      bottom: 0.85rem;
+      right: 15px;
+      z-index: 9;
+      
+      &:hover {
+        //background-color: $color-card-active;
+        display: block;
+      }
+    }
+  }
+
+
+  .card-content-area {
+    position: relative;
+    &:hover {
+      cursor: pointer;
+    }
+    .card-title {
+      display: block;
+      font-size: 2rem;
+      color: $color-default-font;
+      margin-bottom: 0.3rem;
+      text-transform: capitalize;
+    }
+    .card-date{
+      font-size: 1.2rem;
+      color: $label-color;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .card-types {
+      margin-bottom: 1.5rem;
+      display: inline-block;
+  
+      .card-type {
+        display: inline-block;
+        font-size: 1.1rem;
+        padding: 4px 12px 6px;
+        border: 1px solid $color-default-border;
+        border-radius: 32px;
+        margin-right: 4px;
+        margin-bottom: 4px;
+        background-color: $color-white;
+        color: $color-minor-font;
+        text-transform: capitalize;
+      }
+    }
+    .card-dates{
+      margin: 1.5rem 0 1rem;
+      font-size: 1.2rem;
+      color:#9B9B9B;
+      span{
+        margin-right: 1rem;
+      }
+    }
+  
+    .card-info-section {
+      .card-info-subsection {
+        width: 33%;
+        display: inline-block;
+  
+        .card-info-subsection-caption {
+          display: block;
+          font-size: 13px;
+          color: $color-minor-font;
+          margin-bottom: 4px;
+        }
+  
+        .card-info-subsection-value {
+          font-size: 24px;
+          color: $color-default-font;
+          z-index: 2;
+
+        }
+      }
+    }
+  }
+  .link-view-list{
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    bottom: 0.85rem;
+    color: #F46414;
+    z-index: 9;
+  }
+
+  &.add-sector-card{
+    text-align: center;
+    padding-top: 3rem;
+    background-color: $color-filter-background;
+    &:hover{
+      cursor: pointer;
+      background-color: darken($color-filter-background, 2);
+    }
+    .card-title:before{
+      content: "\0064";
+      display: block;
+      font-family: 'ib';
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      vertical-align: middle;
+      color: $color-minor-font;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+//new card grid list
+.card-grid{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content:flex-start;
+  -ms-justify-content:flex-start;
+  justify-content:flex-start;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  .card{
+    width:100%;
+  }
+}
+
+.card-delete-button{
+  position: absolute;
+  right: 0.25rem;
+  top:0;
+  opacity: 0.3;
+  cursor: pointer;
+  color: #333333;
+  padding: 1rem;
+  width: 30px;
+  height: 30px;
+  &:hover{
+    opacity: 1;
+    color: #F46414;
+  }
+  &:focus{
+    box-shadow: none;
+    border-color: transparent;
+  }
+}
+
+
+//overwrite input style
+.Select-control{
+  border: none;
+  border-bottom: 1px solid $color-default-border;
+  background-color: transparent;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.is-focused:not(.is-open) > .Select-control {
+  border-color: $color-default-border;
+  box-shadow: none;
+}
+
+
+.columngrid_4{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content:flex-start;
+  -ms-justify-content:flex-start;
+  justify-content:flex-start;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  .card-block{
+    width:32%;
+  }
+}
+.company-count{
+  display: inline-block;
+  font-size: 1.1rem;
+  padding: 2px 6px 4px;
+  border: 1px solid #DDDDDD;
+  border-radius: 32px;
+  margin-right: 4px;
+  background-color: #ffffff;
+  color: #9B9B9B;
+  text-transform: capitalize;
+}

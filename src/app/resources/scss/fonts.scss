@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'ib';
+  src: url($fonts-dir+'IB/ib.eot');
+  src: url($fonts-dir+'IB/ib.eot?#iefix') format('embedded-opentype'),
+  url($fonts-dir+'IB/ib.woff') format('woff'),
+  url($fonts-dir+'IB/ib.ttf') format('truetype'),
+  url($fonts-dir+'IB/ib.svg#ib') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
